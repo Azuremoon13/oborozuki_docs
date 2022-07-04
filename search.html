@@ -2,12 +2,9 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="#" />
 
-    <meta name="generator" content="sphinx-5.0.2, furo 2022.06.04.1"/>
-        <title>Oborozuki 1.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <meta name="generator" content="sphinx-5.0.2, furo 2022.06.04.1"/><title>Search - Oborozuki 1.0 documentation</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -123,7 +120,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Oborozuki 1.0 documentation</div></a>
+      <a href="index.html"><div class="brand">Oborozuki 1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,12 +140,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">Oborozuki 1.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="#" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -186,128 +183,17 @@
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-oborozuki-s-documentation">
-<h1>Welcome to Oborozuki’s documentation!<a class="headerlink" href="#welcome-to-oborozuki-s-documentation" title="Permalink to this heading">#</a></h1>
-<p><strong>Oborozuki</strong> is a Python project utilising twitchio and twitch’s API to run
-channel moderation, with custom command capability and some fun mini-games.
-This project has just been released in closed beta, if you wish to
-participate, please head to <a class="reference external" href="https://www.twitch.tv/dot_thebot/">Dot’s channel</a> and type
-!invite into the channels chat!</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This project is under active development and is in EARLY stages of a beta</p>
+          
+<noscript>
+<div class="admonition error">
+  <p class="admonition-title">Error</p>
+  <p>
+    Please activate JavaScript to enable the search functionality.
+  </p>
 </div>
-<div class="toctree-wrapper compound">
-</div>
-</section>
-<section id="standard-commands">
-<h1>Standard commands:<a class="headerlink" href="#standard-commands" title="Permalink to this heading">#</a></h1>
-<div class="line-block">
-<div class="line"><strong>Here is some usage on the standard commands to config this bot in your channel</strong></div>
-<div class="line">!command add/remove/edit/option - you can use this to modify the custom commands in your channel</div>
-<div class="line-block">
-<div class="line">- add : use this to add a command, required args: !command add {name} {command response} I.E. !command add !hi hello o/ !</div>
-<div class="line">- remove : use this to remove a command, required args: !command remove {name} I.E. !command remove !hi</div>
-<div class="line">- edit : use this to edit a command, required args: !command edit {name} {command response} I.E. !command edit !hi hello i am new here o/ !</div>
-<div class="line">- option : use this to adjust the options for the command, there are 3 options to adjust; user level and global/user cooldowns (level=E,S,V,M,B)(GCD=0)(UCD=0) required args: !command option {name} {option} I.E. !command option !hi GCD=5</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">!quiet - use this to disable all custom commands in this channel</div>
-<div class="line-block">
-<div class="line">- if you follow this command with a 1 this will disable the commands I.E. !quiet 1</div>
-<div class="line">- if you follow this command with a 0 this will enable the commands I.E. !quiet 0</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">!links - use this to enable link protection in the channel</div>
-<div class="line-block">
-<div class="line">- if you follow this command with a 1 this will enable the link protection I.E. !links 1</div>
-<div class="line">- if you follow this command with a 0 this will disable the link protection I.E. !links 0</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">!banned - use this to ban a certain word from your channel.</div>
-<div class="line-block">
-<div class="line">- follow this command with the word you wish to ban I.E. !banned poo</div>
-<div class="line">- can only ban one word at a time</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">!emotes - use this to enable emotes only mode - (useful for mobile moders)</div>
-</div>
-<div class="line-block">
-<div class="line">!emotesoff - use this to disable emotes only mode - (useful for mobile moders)</div>
-</div>
-<div class="line-block">
-<div class="line">!clear - This will purge the chat of all messages. (blocked by BTTV) - (useful for mobile moders)</div>
-</div>
-</section>
-<section id="custom-command-args">
-<h1>Custom command args:<a class="headerlink" href="#custom-command-args" title="Permalink to this heading">#</a></h1>
-<div class="line-block">
-<div class="line">#~~~ user name ~~~#</div>
-<div class="line">This is to get the name of the user that invoked the command:</div>
-<div class="line">‘I am ${user}, hello’ = I am obrozuki13, hello</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line">#~~~ game ~~~#</div>
-<div class="line">This is to return the current game of the channel:</div>
-<div class="line">‘We currently are playing ${game}’ = We currently are playing Valorant.</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ target url ~~~#</div>
-<div class="line">This is to return the target in a given command:</div>
-<div class="line">‘this is there link: ${target_url}’ = this is there link: www.twitch.tv/Azuremoon13</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ target game ~~~#</div>
-<div class="line">This is to return the target in a given command:</div>
-<div class="line">‘${user} is playing ${target_game}’ = Azure is playing Valorant</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ target name ~~~#</div>
-<div class="line">This is to return the target in a given command:</div>
-<div class="line">‘${user} hugs ${target}’ = obrozuki13 hugs azure</div>
-<div class="line"><br /></div>
-<div class="line">notes:</div>
-<div class="line">- if there is no user specified for the target, it will self target the user.</div>
-<div class="line">- if there is no tag from twitch using ‘&#64;’ it will default to the first word after the command invoke, conversely if there is a tag it will use this even if its not first word.</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ url fetch ~~~#</div>
-<div class="line">This is to run a api fetch from a url and return it in plain text.</div>
-<div class="line">‘we currently are ${url.https://api.kyroskoh.xyz/valorant/v1/mmr/eu/x/x}’ = we currently are Radiant - 66rr</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ count ~~~#</div>
-<div class="line">This is used to create a count for a certain thing, this will increment the counter each time it is invoked:</div>
-<div class="line">we have died ${count deaths} times = we have died 13 times</div>
-<div class="line"><br /></div>
-<div class="line">Notes:</div>
-<div class="line">- this doesnt just have to me a random name, you can use other custom args in this to create unique counters</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ getcount ~~~#</div>
-<div class="line">This is used to get a count for a certain thing:</div>
-<div class="line">we have died ${getcount deaths} times = we have died 13 times</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ rand user ~~~#</div>
-<div class="line">This will return a random user in the chat.</div>
-<div class="line">Here is a random user.. ${randuser} you have won! = Here is a random user.. Azure you have won!</div>
-<div class="line"><br /></div>
-<div class="line">notes:</div>
-<div class="line">- this will also include any bots in your chat.</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ rand number ~~~#</div>
-<div class="line">this will return a random number between the 2 numbers you specify.</div>
-<div class="line">‘I am ${randnum.0-110}% lit today’ = I am 69% lit today.</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ rand choice ~~~#</div>
-<div class="line">this will return a random choice between the list you specify.</div>
-<div class="line">‘I am ${randchoice.[funny cool sexy]}’ = I am cool.</div>
-<div class="line"><br /></div>
-<div class="line">notes:</div>
-<div class="line">any items need to be between [ ] and seperated by a space</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ word ~~~#</div>
-<div class="line">coming soon…</div>
-</div>
-</section>
+</noscript>
+
+<div id="search-results"></div>
 
         </article>
       </div>
@@ -348,5 +234,8 @@ participate, please head to <a class="reference external" href="https://www.twit
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
-    </body>
+    
+<script src="_static/searchtools.js"></script>
+<script src="_static/language_data.js"></script>
+<script src="searchindex.js"></script></body>
 </html>
