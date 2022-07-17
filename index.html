@@ -209,6 +209,9 @@ participate, please head to <a class="reference external" href="https://www.twit
 <div class="line">- add : use this to add a command, required args: !command add {name} {command response} I.E. !command add !hi hello o/ !</div>
 <div class="line">- remove : use this to remove a command, required args: !command remove {name} I.E. !command remove !hi</div>
 <div class="line">- edit : use this to edit a command, required args: !command edit {name} {command response} I.E. !command edit !hi hello i am new here o/ !</div>
+<div class="line-block">
+<div class="line">- if you just do !command edit {name} you will get back the raw command response to enable easy editing</div>
+</div>
 <div class="line">- option : use this to adjust the options for the command, there are 3 options to adjust; user level and global/user cooldowns (level=E,S,V,M,B)(GCD=0)(UCD=0) required args: !command option {name} {option} I.E. !command option !hi GCD=5</div>
 </div>
 </div>
@@ -222,11 +225,17 @@ participate, please head to <a class="reference external" href="https://www.twit
 <div class="line-block">
 <div class="line">!links - use this to enable link protection in the channel</div>
 <div class="line-block">
-<div class="line">- if you follow this command with a 1 this will enable the link protection I.E. !links 1</div>
-<div class="line">- if you follow this command with a 0 this will disable the link protection I.E. !links 0</div>
-</div>
-</div>
 <div class="line-block">
+<div class="line">- if you follow this command with a S=subscribers, V=vips, M=moderators this will enable the link protection for these people or higher to send links I.E. !links V</div>
+<div class="line">- if you follow this command with a 0 this will disable the link protection I.E. !links 0</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">!permit - use this to allow someone to send a link as a one time exception</div>
+<div class="line-block">
+<div class="line">- you need to follow this with a username.. I.E. !permit &#64;Azuremoon13</div>
+<div class="line"><br /></div>
+</div>
+</div>
 <div class="line">!banned - use this to ban a certain word from your channel.</div>
 <div class="line-block">
 <div class="line">- follow this command with the word you wish to ban I.E. !banned poo</div>
@@ -291,7 +300,18 @@ participate, please head to <a class="reference external" href="https://www.twit
 <div class="line">Here is a random user.. ${randuser} you have won! = Here is a random user.. Azure you have won!</div>
 <div class="line"><br /></div>
 <div class="line">notes:</div>
+<div class="line-block">
 <div class="line">- this will also include any bots in your chat.</div>
+<div class="line">- they also have to of spoken in chat</div>
+<div class="line"><br /></div>
+</div>
+<div class="line">#~~~ rand mod ~~~#</div>
+<div class="line">This will return a random active moderator in the chat.</div>
+<div class="line">Here is a random mod.. show your love to ${randmod}! = Here is a random mod.. show your love to Azure!</div>
+<div class="line"><br /></div>
+<div class="line">notes:</div>
+<div class="line">- this will also include any bots in your chat.</div>
+<div class="line">- they also have to of spoken in chat</div>
 <div class="line"><br /></div>
 <div class="line">#~~~ rand number ~~~#</div>
 <div class="line">this will return a random number between the 2 numbers you specify.</div>
@@ -299,10 +319,10 @@ participate, please head to <a class="reference external" href="https://www.twit
 <div class="line"><br /></div>
 <div class="line">#~~~ rand choice ~~~#</div>
 <div class="line">this will return a random choice between the list you specify.</div>
-<div class="line">‘I am ${randchoice.[funny cool sexy]}’ = I am cool.</div>
+<div class="line">‘I am ${randchoice.[funny,cool,sexy]}’ = I am cool.</div>
 <div class="line"><br /></div>
 <div class="line">notes:</div>
-<div class="line">any items need to be between [ ] and seperated by a space</div>
+<div class="line">any items need to be between [ ] and seperated by a ,</div>
 <div class="line"><br /></div>
 <div class="line">#~~~ word ~~~#</div>
 <div class="line">coming soon…</div>
