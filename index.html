@@ -196,137 +196,247 @@ participate, please head to <a class="reference external" href="https://www.twit
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This project is under active development and is in EARLY stages of a beta</p>
-</div>
-<div class="toctree-wrapper compound">
+<p>if you wish to give feedback or suggestions please head to <a class="reference external" href="https://forms.gle/6yc6UubXfNs2byhR8">here</a></p>
 </div>
 </section>
 <section id="standard-commands">
 <h1>Standard commands:<a class="headerlink" href="#standard-commands" title="Permalink to this heading">#</a></h1>
-<div class="line-block">
-<div class="line"><strong>Here is some usage on the standard commands to config this bot in your channel</strong></div>
-<div class="line">!command add/remove/edit/option - you can use this to modify the custom commands in your channel</div>
-<div class="line">  this can also be called by !cmd in chat if you have conflicting bots in your channel</div>
-<div class="line">- add : use this to add a command, required args: !command add {name} {command response} I.E. !command add !hi hello o/ !</div>
-<div class="line">- remove : use this to remove a command, required args: !command remove {name} I.E. !command remove !hi</div>
-<div class="line">- edit : use this to edit a command, required args: !command edit {name} {command response} I.E. !command edit !hi hello i am new here o/ !</div>
-<div class="line-block">
-<div class="line">- if you just do !command edit {name} you will get back the raw command response to enable easy editing</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The prefixes for this bot are</p>
+<blockquote>
+<div><p>! and ~</p>
+</div></blockquote>
+<p>this allows any clashes to be avoided</p>
 </div>
-<div class="line">- option : use this to adjust the options for the command, there are 3 options to adjust; user level and global/user cooldowns (level=E,S,V,M,B)(GCD=0)(UCD=0) required args: !command option {name} {option} I.E. !command option !hi GCD=5</div>
+<p><strong>Here is some usage on the standard commands to config this bot in your channel</strong></p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!command</span></span></dt>
+<dd><ul class="simple">
+<li><p>add/remove/edit/option - you can use this to modify the custom commands in your channel</p></li>
+<li><p>add or a : use this to add a command, required args: !command add {name} {command response} I.E. !command add !hi hello o/ !</p></li>
+<li><p>remove or r : use this to remove a command, required args: !command remove {name} I.E. !command remove !hi</p></li>
+<li><dl class="simple">
+<dt>edit or e<span class="classifier">use this to edit a command, required args: !command edit {name} {command response} I.E. !command edit !hi hello i am new here o/ !</span></dt><dd><ul>
+<li><p>if you just do !command edit {name} you will get back the raw command response to enable easy editing</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>option or o : use this to adjust the options for the command, there are 3 options to adjust; user level and global/user cooldowns (level=E,S,V,M,B)(GCD=0)(UCD=0) required args: !command option {name} {option} I.E. !command option !hi GCD=5</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this can also be called by !cmd</p></li>
+</ul>
 </div>
-</div>
-<div class="line-block">
-<div class="line">!quiet - use this to disable all custom commands in this channel</div>
-<div class="line-block">
-<div class="line">- if you follow this command with a 1 this will disable the commands I.E. !quiet 1</div>
-<div class="line">- if you follow this command with a 0 this will enable the commands I.E. !quiet 0</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">!links - use this to enable link protection in the channel</div>
-<div class="line-block">
-<div class="line-block">
-<div class="line">- if you follow this command with a S=subscribers, V=vips, M=moderators this will enable the link protection for these people or higher to send links I.E. !links V</div>
-<div class="line">- if you follow this command with a 0 this will disable the link protection I.E. !links 0</div>
-<div class="line"><br /></div>
-</div>
-<div class="line">!permit - use this to allow someone to send a link as a one time exception</div>
-<div class="line-block">
-<div class="line">- you need to follow this with a username.. I.E. !permit &#64;Azuremoon13</div>
-<div class="line"><br /></div>
-</div>
-</div>
-<div class="line">!banned - use this to ban a certain word from your channel.</div>
-<div class="line-block">
-<div class="line">- follow this command with the word you wish to ban I.E. !banned poo</div>
-<div class="line">- can only ban one word at a time</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">!emotes - use this to enable emotes only mode - (useful for mobile moders)</div>
-</div>
-<div class="line-block">
-<div class="line">!emotesoff - use this to disable emotes only mode - (useful for mobile moders)</div>
-</div>
-<div class="line-block">
-<div class="line">!clear - This will purge the chat of all messages. (blocked by BTTV) - (useful for mobile moders)</div>
-</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!quiet</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to disable all custom commands in this channel</p></li>
+<li><p>if you follow this command with a 1 this will disable the commands I.E. !quiet 1</p></li>
+<li><p>if you follow this command with a 0 this will enable the commands I.E. !quiet 0</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!links</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to enable link protection in the channel</p></li>
+<li><p>if you follow this command with a S=subscribers, V=vips, M=moderators this will enable the link protection for these people or higher to send links I.E. !links V will only allow VIPs or mods to send links</p></li>
+<li><p>if you follow this command with a 0 this will disable the link protection I.E. !links 0</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!permit</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to allow someone to send a link as a one time exception</p></li>
+<li><p>you need to follow this with a username.. I.E. !permit &#64;Azuremoon13</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!banned</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to ban a certain word from your channel.</p></li>
+<li><p>follow this command with the word you wish to ban I.E. !banned poo</p></li>
+<li><p>can only ban one word at a time</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!emotes</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to enable emotes only mode - (useful for mobile moders)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!emotesoff</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to disable emotes only mode - (useful for mobile moders)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!clear</span></span></dt>
+<dd><ul class="simple">
+<li><p>This will purge the chat of all messages. (blocked by BTTV) - (useful for mobile moders)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!mso</span></span></dt>
+<dd><ul class="simple">
+<li><p>This will give a default SO to ‘x’ amount of people. simple follow the command with as many &#64;’s as you want seperated by a space</p></li>
+</ul>
+</dd></dl>
+
 </section>
 <section id="custom-command-args">
 <h1>Custom command args:<a class="headerlink" href="#custom-command-args" title="Permalink to this heading">#</a></h1>
-<div class="line-block">
-<div class="line">#~~~ user name ~~~#</div>
-<div class="line">This is to get the name of the user that invoked the command:</div>
-<div class="line">‘I am ${user}, hello’ = I am obrozuki13, hello</div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-<div class="line">#~~~ game ~~~#</div>
-<div class="line">This is to return the current game of the channel:</div>
-<div class="line">‘We currently are playing ${game}’ = We currently are playing Valorant.</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ target url ~~~#</div>
-<div class="line">This is to return the target in a given command:</div>
-<div class="line">‘this is there link: ${target_url}’ = this is there link: www.twitch.tv/Azuremoon13</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ target game ~~~#</div>
-<div class="line">This is to return the target in a given command:</div>
-<div class="line">‘${user} is playing ${target_game}’ = Azure is playing Valorant</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ target name ~~~#</div>
-<div class="line">This is to return the target in a given command:</div>
-<div class="line">‘${user} hugs ${target}’ = obrozuki13 hugs azure</div>
-<div class="line"><br /></div>
-<div class="line">notes:</div>
-<div class="line">- if there is no user specified for the target, it will self target the user.</div>
-<div class="line">- if there is no tag from twitch using ‘&#64;’ it will default to the first word after the command invoke, conversely if there is a tag it will use this even if its not first word.</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ url fetch ~~~#</div>
-<div class="line">This is to run a api fetch from a url and return it in plain text.</div>
-<div class="line">‘we currently are ${url.https://api.kyroskoh.xyz/valorant/v1/mmr/eu/x/x}’ = we currently are Radiant - 66rr</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ count ~~~#</div>
-<div class="line">This is used to create a count for a certain thing, this will increment the counter each time it is invoked:</div>
-<div class="line">we have died ${count deaths} times = we have died 13 times</div>
-<div class="line"><br /></div>
-<div class="line">Notes:</div>
-<div class="line">- this doesnt just have to me a random name, you can use other custom args in this to create unique counters</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ getcount ~~~#</div>
-<div class="line">This is used to get a count for a certain thing:</div>
-<div class="line">we have died ${getcount deaths} times = we have died 13 times</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ rand user ~~~#</div>
-<div class="line">This will return a random user in the chat.</div>
-<div class="line">Here is a random user.. ${randuser} you have won! = Here is a random user.. Azure you have won!</div>
-<div class="line"><br /></div>
-<div class="line">notes:</div>
-<div class="line-block">
-<div class="line">- this will also include any bots in your chat.</div>
-<div class="line">- they also have to of spoken in chat</div>
-<div class="line"><br /></div>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${user}</span></span></dt>
+<dd><p>This is to get the name of the user that invoked the command:
+‘I am ${user}, hello’ = I am obrozuki13, hello</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${game}</span></span></dt>
+<dd><p>This is to return the current game of the channel:
+‘We currently are playing ${game}’ = We currently are playing Valorant.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${target_url}</span></span></dt>
+<dd><p>This is to return the target in a given command:
+‘this is there link: ${target_url}’ = this is there link: www.twitch.tv/Azuremoon13</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${target_game}</span></span></dt>
+<dd><p>This is to return the target in a given command:
+‘${user} is playing ${target_game}’ = Azure is playing Valorant</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${target}</span></span></dt>
+<dd><p>This is to return the target in a given command:
+‘${user} hugs ${target}’ = obrozuki13 hugs azure</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>if there is no user specified for the target, it will self target the user.</p></li>
+<li><p>if there is no tag from twitch using ‘&#64;’ it will default to the first word after the command invoke, conversely if there is a tag it will use this even if its not first word.</p></li>
+</ul>
 </div>
-<div class="line">#~~~ rand mod ~~~#</div>
-<div class="line">This will return a random active moderator in the chat.</div>
-<div class="line">Here is a random mod.. show your love to ${randmod}! = Here is a random mod.. show your love to Azure!</div>
-<div class="line"><br /></div>
-<div class="line">notes:</div>
-<div class="line">- this will also include any bots in your chat.</div>
-<div class="line">- they also have to of spoken in chat</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ rand number ~~~#</div>
-<div class="line">this will return a random number between the 2 numbers you specify.</div>
-<div class="line">‘I am ${randnum.0-110}% lit today’ = I am 69% lit today.</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ rand choice ~~~#</div>
-<div class="line">this will return a random choice between the list you specify.</div>
-<div class="line">‘I am ${randchoice.[funny,cool,sexy]}’ = I am cool.</div>
-<div class="line"><br /></div>
-<div class="line">notes:</div>
-<div class="line">any items need to be between [ ] and seperated by a ,</div>
-<div class="line"><br /></div>
-<div class="line">#~~~ word ~~~#</div>
-<div class="line">coming soon…</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${mention}</span></span></dt>
+<dd><p>This is to return the target in a given command but with the &#64;:
+‘hello ${mention}!’ = hello &#64;dot_thebot!</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${url.x}</span></span></dt>
+<dd><p>This is to run a api fetch from a url and return it in plain text.
+‘we currently are ${url.https://api.kyroskoh.xyz/valorant/v1/mmr/eu/x/x}’ = we currently are Radiant - 69rr</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${count</span> <span class="pre">x}</span></span></dt>
+<dd><p>This is used to create a count for a certain thing, this will increment the counter each time it is invoked:
+we have died ${count deaths} times = we have died 13 times</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this doesnt just have to me a random name, you can use other custom args in this to create unique counters</p></li>
+</ul>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${getcount</span> <span class="pre">x}</span></span></dt>
+<dd><p>This is used to get a count for a certain thing:
+we have died ${getcount deaths} times = we have died 13 times</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randuser}</span></span></dt>
+<dd><p>This will return a random user in the chat.
+Here is a random user.. ${randuser} you have won! = Here is a random user.. Azure you have won!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this will also include any bots in your chat.</p></li>
+<li><p>they also have to of spoken in chat</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randmod}</span></span></dt>
+<dd><p>This will return a random active moderator in the chat.
+Here is a random mod.. show your love to ${randmod}! = Here is a random mod.. show your love to Azure!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this will also include any bots modded in your chat.</p></li>
+<li><p>they also have to of spoken in chat</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randnum.x-y}</span></span></dt>
+<dd><p>this will return a random number between the 2 numbers you specify.
+‘I am ${randnum.0-110}% lit today’ = I am 69% lit today.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randchoice.[x,y,z]}</span></span></dt>
+<dd><p>this will return a random choice between the list you specify.
+‘I am ${randchoice.[funny,cool,sexy]}’ = I am cool.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>-any items need to be between [ ] and seperated by a ,</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${word}</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">coming</span> <span class="pre">soon...</span></span></dt>
+<dd></dd></dl>
+
 </section>
 
         </article>
