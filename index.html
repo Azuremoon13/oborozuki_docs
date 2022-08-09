@@ -324,8 +324,19 @@ participate, please head to <a class="reference external" href="https://www.twit
 <span class="sig-name descname"><span class="pre">!quote</span></span></dt>
 <dd><ul class="simple">
 <li><p>add or a : use this to add a quote</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This needs to be in the format of: !quote add &lt;person&gt; &lt;quote&gt;</p></li>
+<li><p>Dot will check if &lt;person&gt; is a valid twitch name.. if its not it will give you the option to add regardless</p></li>
+</ul>
+</div>
+<ul class="simple">
 <li><p>remove or r : use this to remove a quote</p></li>
+<li><p>list : use to get a list of quotes from a given user I.E !quote list &#64;dot_thebot</p></li>
 <li><p>if a number is supplied after this command, it will fetch that quote I.E !quote 6 = ‘Hello person! i am dot!’</p></li>
+<li><p>if a user is supplied after this command, it will fetch a random quote for that person</p></li>
 <li><p>if NO number is provided this will randomly select a quote for this channel</p></li>
 </ul>
 </dd></dl>
@@ -335,11 +346,27 @@ participate, please head to <a class="reference external" href="https://www.twit
 <h1>Mini-games:<a class="headerlink" href="#mini-games" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!dotsadventure</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a text based game in which you can fight your fellow hunters in chat..</p></li>
+<li><p>Using this command will give you all the other commands need to play.. there is a few..</p></li>
+<li><dl class="simple">
+<dt>if you are low on health or run out of stamina you can buy more.. if you die there is no way to currently revive</dt><dd><ul>
+<li><p>if you can’t afford to refill your stats or die.. once every day all stats are refilled automatically</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">!hangman</span></span></dt>
 <dd><ul class="simple">
 <li><dl class="simple">
 <dt>This will allow you to play hangman as a group in chat!</dt><dd><ul>
-<li><p>once someone has started this game, others simple type ‘join’ in chat to participate</p></li>
+<li><p>once someone has started this game, others simple type ‘join_hangman’ in chat to participate</p></li>
 <li><p>each round dot will ask for a letter suggestion, the letter that has been suggested most will be used as your guess</p></li>
 </ul>
 </dd>
@@ -369,6 +396,126 @@ participate, please head to <a class="reference external" href="https://www.twit
 <span class="sig-name descname"><span class="pre">!wins</span></span></dt>
 <dd><ul class="simple">
 <li><p>you can use this command to find out how many wins or loses you have for any game, simple follow the command with the game I.E !wins hangman</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="loyalty">
+<h1>Loyalty:<a class="headerlink" href="#loyalty" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is disabled by default</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!gamblesettings</span></span></dt>
+<dd><ul>
+<li><p>use this command to config the Loyalty settings in chat</p></li>
+<li><dl class="simple">
+<dt>you have a couple settings you can change</dt><dd><ul class="simple">
+<li><p>loyalty (enables passive point generation)</p></li>
+<li><p>loyalty_name</p></li>
+<li><p>gambling (enables gambling commands)</p></li>
+<li><p>watchtime (enables watchtime commands)</p></li>
+<li><p>odds_&lt;x&gt; (x = 1 - 5)</p></li>
+<li><p>gamble_mode ## YET TO BE IMPLEMENTED ##</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>following each option by = then your choice</p></li>
+<li><p>loyalty/gambling/watchtime are either 0 or 1 I.E loyalty=1</p></li>
+<li><p>loyalty_name is the name of your points (this defaults to points)</p></li>
+<li><dl>
+<dt>odds_&lt;x&gt; changes the multiplier return rate for certain gambling games I.E odds_3=1</dt><dd><ul class="simple">
+<li><p>this can be either a 0 or any float above 1</p></li>
+<li><p>these do have default values so there is no need to change unless wanted</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>rolls are:</p>
+<p>odds_1 = 0 - 25
+odds_2 = 26 - 50
+odds_3 = 51 - 75
+odds_4 = 76 - 97
+odds_5 = 98 - 100</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>This can config mulitple settings at once. simply seperate them with a ‘ , ‘</dt><dd><p>I.E !gamblesettings gambling=1, watchtime=1</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!give</span></span></dt>
+<dd><ul class="simple">
+<li><p>Use to transfer points from yourself to a target I.E !give &#64;dot_thebot 500</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!addpoints</span></span></dt>
+<dd><ul class="simple">
+<li><p>Use to add points to a target I.E !addpoints &#64;dot_thebot 500</p></li>
+<li><p>This is a mod only command</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!removepoints</span></span></dt>
+<dd><ul class="simple">
+<li><p>Use to remove points to a target I.E !removepoints &#64;dot_thebot 500</p></li>
+<li><p>This is a mod only command</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!dice</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is like your generic !gamble command I.E !dice 50</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!blackjack</span> <span class="pre">or</span> <span class="pre">!21</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a game of blackjack to start type !blackjack &lt;gamble amount&gt;</p></li>
+<li><p>Dot will then deal you 2 cards and the will reveal one of her cards</p></li>
+<li><dl class="simple">
+<dt>You will then be asked to HIT or STAND by typing your choice in chat (up to 5 cards)</dt><dd><ul>
+<li><p>if you have an Ace, when you finish Dot will ask if you wanna use Aces as high(11) or low(1)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!top</span></span></dt>
+<dd><ul class="simple">
+<li><p>Returns a list of top 10 point holders</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!tophours</span></span></dt>
+<dd><ul class="simple">
+<li><p>Returns a list of top 10 watchtime holders</p></li>
 </ul>
 </dd></dl>
 
@@ -460,7 +607,6 @@ Here is a random user.. ${randuser} you have won! = Here is a random user.. Azur
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>this will also include any bots in your chat.</p></li>
-<li><p>they also have to of spoken in chat</p></li>
 </ul>
 </div>
 </dd></dl>
