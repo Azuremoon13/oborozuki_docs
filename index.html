@@ -1,0 +1,784 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+
+    <meta name="generator" content="sphinx-5.0.2, furo 2022.06.04.1"/>
+        <title>Oborozuki 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">Oborozuki 1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  
+  <span class="sidebar-brand-text">Oborozuki 1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="welcome-to-oborozuki-s-documentation">
+<h1>Welcome to Oborozuki’s documentation!<a class="headerlink" href="#welcome-to-oborozuki-s-documentation" title="Permalink to this heading">#</a></h1>
+<p><strong>Oborozuki</strong> is a Python project utilising twitchio and twitch’s API to run
+channel moderation, with custom command capability and some fun mini-games.
+This project has just been released in closed beta, if you wish to
+participate, please head to <a class="reference external" href="https://www.twitch.tv/dot_thebot/">Dot’s channel</a> and type
+!invite into the channels chat!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This project is under active development and is in EARLY stages of a beta</p>
+<p>if you wish to give feedback or suggestions please head to <a class="reference external" href="https://forms.gle/6yc6UubXfNs2byhR8">here</a></p>
+</div>
+</section>
+<section id="standard-commands">
+<h1>Standard commands:<a class="headerlink" href="#standard-commands" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The prefixes for this bot are</p>
+<blockquote>
+<div><p>! and ~</p>
+</div></blockquote>
+<p>this allows any clashes to be avoided</p>
+</div>
+<p><strong>Here is some usage on the standard commands to config this bot in your channel</strong></p>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!command</span></span></dt>
+<dd><ul class="simple">
+<li><p>add/remove/edit/option - you can use this to modify the custom commands in your channel</p></li>
+<li><p>add or a : use this to add a command, required args: !command add {name} {command response} I.E. !command add !hi hello o/ !</p></li>
+<li><p>remove or r : use this to remove a command, required args: !command remove {name} I.E. !command remove !hi</p></li>
+<li><dl class="simple">
+<dt>edit or e<span class="classifier">use this to edit a command, required args: !command edit {name} {command response} I.E. !command edit !hi hello i am new here o/ !</span></dt><dd><ul>
+<li><p>if you just do !command edit {name} you will get back the raw command response to enable easy editing</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>option or o : use this to adjust the options for the command, there are 3 options to adjust; user level and global/user cooldowns (level=E,S,V,M,B)(GCD=0)(UCD=0) required args: !command option {name} {option} I.E. !command option !hi GCD=5</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this can also be called by !cmd</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!enable</span></span></dt>
+<dd><ul class="simple">
+<li><p>to enable a custom command !enable &lt;name&gt;</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!disable</span></span></dt>
+<dd><ul class="simple">
+<li><p>to disable a custom command !disable &lt;name&gt;</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!quiet</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to disable all commands in this channel</p></li>
+<li><p>if you follow this command with a 1 this will disable the commands I.E. !quiet 1</p></li>
+<li><p>if you follow this command with a 0 this will enable the commands I.E. !quiet 0</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!links</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to enable link protection in the channel</p></li>
+<li><p>if you follow this command with a S=subscribers, V=vips, M=moderators this will enable the link protection for these people or higher to send links I.E. !links V will only allow VIPs or mods to send links</p></li>
+<li><p>if you follow this command with a 0 this will disable the link protection I.E. !links 0</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!permit</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to allow someone to send a link as a one time exception</p></li>
+<li><p>you need to follow this with a username.. I.E. !permit &#64;Azuremoon13</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!banned</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to ban a certain word from your channel.</p></li>
+<li><p>follow this command with the word you wish to ban I.E. !banned poo</p></li>
+<li><p>can only ban one word at a time</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!emotes</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to enable emotes only mode - (useful for mobile moders)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!emotesoff</span></span></dt>
+<dd><ul class="simple">
+<li><p>use this to disable emotes only mode - (useful for mobile moders)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!clear</span></span></dt>
+<dd><ul class="simple">
+<li><p>This will purge the chat of all messages. (blocked by BTTV) - (useful for mobile moders)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!mso</span></span></dt>
+<dd><ul class="simple">
+<li><p>This will give a default SO to ‘x’ amount of people. simple follow the command with as many &#64;’s as you want seperated by a space</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!modcheck</span></span></dt>
+<dd><ul class="simple">
+<li><p>This will ping all active mods in chat asking if they are around!</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This all picks up mods once they have chatted in chat once!</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!quote</span></span></dt>
+<dd><ul class="simple">
+<li><p>add or a : use this to add a quote</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This needs to be in the format of: !quote add &lt;person&gt; &lt;quote&gt;</p></li>
+<li><p>Dot will check if &lt;person&gt; is a valid twitch name.. if its not it will give you the option to add regardless</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>remove or r : use this to remove a quote</p></li>
+<li><p>list : use to get a list of quotes from a given user I.E !quote list &#64;dot_thebot</p></li>
+<li><p>if a number is supplied after this command, it will fetch that quote I.E !quote 6 = ‘Hello person! i am dot!’</p></li>
+<li><p>if a user is supplied after this command, it will fetch a random quote for that person</p></li>
+<li><p>if NO number is provided this will randomly select a quote for this channel</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!oops</span></span></dt>
+<dd><ul class="simple">
+<li><p>deletes up to the last 10 messages from a user, !oops 5</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!counter</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a generic counter function, it is simply !counter &lt;x&gt; where X is +, - or set to adjust counter.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!editcounter</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is to edit custom counters from commands.</p></li>
+<li><p>if you just do !editcounter you will get a list of all counters you can adjust</p></li>
+<li><p>to adjust a counter do !editcounter &lt;counter&gt; &lt;value&gt;</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!followage</span></span></dt>
+<dd><ul class="simple">
+<li><p>Pretty obvious… shows followage to the streamer</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!squad</span></span></dt>
+<dd><ul class="simple">
+<li><p>if you just do squad, this shows the current squad.</p></li>
+<li><p>add or a: use to add to the squad, this will accept mulitple people at once if they are seperated by a , so “&#64;azure , &#64;Dot”</p></li>
+<li><p>remove or r: use to remove from the squad, this will accept mulitple people at once if they are seperated by a , so “&#64;azure , &#64;Dot”</p></li>
+<li><p>clear: this will clear the squad for the channel</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!timers</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a chat message timer function.. (all message intervals default to 30minutes, can be changed in intervals of 5 minutes)</p></li>
+<li><p>enable: to enable ALL chat timers</p></li>
+<li><p>disable: to disable ALL chat timers</p></li>
+<li><p>add or a: use this to add a chat timer, !timers a &lt;name&gt; &lt;message&gt;</p></li>
+<li><p>remove or r: use this to remove a timer, !timers r &lt;name&gt;</p></li>
+<li><p>edit or e: use this to edit a message from a timer, !timers e &lt;name&gt; &lt;new_message&gt;</p></li>
+<li><p>option or o: use this to enable/disable or adjust the interval of a timer !timers o &lt;name&gt; (&lt;enabled=(1/0)&gt; / &lt;interval=5&gt;)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!botcleanup</span></span></dt>
+<dd><ul class="simple">
+<li><p>BANS ALL KNOWN BOTS TO DOT, this will go through dot’s database and ban all know bots to dot.. currently 6k. (not really advised, fun to watch though)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This is a BROADCASTER only command</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</section>
+<section id="mini-games">
+<h1>Mini-games:<a class="headerlink" href="#mini-games" title="Permalink to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!dotsadventure</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a text based game in which you can fight your fellow hunters in chat..</p></li>
+<li><p>Using this command will give you all the other commands need to play.. there is a few..</p></li>
+<li><dl class="simple">
+<dt>if you are low on health or run out of stamina you can buy more.. if you die there is no way to currently revive</dt><dd><ul>
+<li><p>if you can’t afford to refill your stats or die.. once every day all stats are refilled automatically</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!hangman</span></span></dt>
+<dd><ul class="simple">
+<li><dl class="simple">
+<dt>This will allow you to play hangman as a group in chat!</dt><dd><ul>
+<li><p>once someone has started this game, others simple type ‘join_hangman’ in chat to participate</p></li>
+<li><p>each round dot will ask for a letter suggestion, the letter that has been suggested most will be used as your guess</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!rps</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is your classic game of Rock, Paper, Scissors, Lizard, Spock.. you will be playing dot! GL</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!defuse</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a bomb defusing mini-game, it will give you a series of wires to choose from, get it right live to tell your tale.. otherwise not so much!</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!wins</span></span></dt>
+<dd><ul class="simple">
+<li><p>you can use this command to find out how many wins or loses you have for any game, simple follow the command with the game I.E !wins hangman</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="loyalty">
+<h1>Loyalty:<a class="headerlink" href="#loyalty" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is disabled by default</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!gamblesettings</span></span></dt>
+<dd><ul>
+<li><p>use this command to config the Loyalty settings in chat</p></li>
+<li><dl class="simple">
+<dt>you have a couple settings you can change</dt><dd><ul class="simple">
+<li><p>loyalty (enables passive point generation)</p></li>
+<li><p>loyalty_name</p></li>
+<li><p>gambling (enables gambling commands)</p></li>
+<li><p>watchtime (enables watchtime commands)</p></li>
+<li><p>odds_&lt;x&gt; (x = 1 - 5)</p></li>
+<li><p>gamble_mode ## YET TO BE IMPLEMENTED ##</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>following each option by = then your choice</p></li>
+<li><p>loyalty/gambling/watchtime are either 0 or 1 I.E loyalty=1</p></li>
+<li><p>loyalty_name is the name of your points (this defaults to points)</p></li>
+<li><dl>
+<dt>odds_&lt;x&gt; changes the multiplier return rate for certain gambling games I.E odds_3=1</dt><dd><ul class="simple">
+<li><p>this can be either a 0 or any float above 1</p></li>
+<li><p>these do have default values so there is no need to change unless wanted</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>rolls are:</p>
+<p>odds_1 = 0 - 25
+odds_2 = 26 - 50
+odds_3 = 51 - 75
+odds_4 = 76 - 97
+odds_5 = 98 - 100</p>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>This can config mulitple settings at once. simply seperate them with a ‘ , ‘</dt><dd><p>I.E !gamblesettings gambling=1, watchtime=1</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!give</span></span></dt>
+<dd><ul class="simple">
+<li><p>Use to transfer points from yourself to a target I.E !give &#64;dot_thebot 500</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!addpoints</span></span></dt>
+<dd><ul class="simple">
+<li><p>Use to add points to a target I.E !addpoints &#64;dot_thebot 500</p></li>
+<li><p>This is a mod only command</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!removepoints</span></span></dt>
+<dd><ul class="simple">
+<li><p>Use to remove points to a target I.E !removepoints &#64;dot_thebot 500</p></li>
+<li><p>This is a mod only command</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!dice</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is like your generic !gamble command I.E !dice 50</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!blackjack</span> <span class="pre">or</span> <span class="pre">!21</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a game of blackjack to start type !blackjack &lt;gamble amount&gt;</p></li>
+<li><p>Dot will then deal you 2 cards and the will reveal one of her cards</p></li>
+<li><dl class="simple">
+<dt>You will then be asked to HIT or STAND by typing your choice in chat (up to 5 cards)</dt><dd><ul>
+<li><p>if you have an Ace, when you finish Dot will ask if you wanna use Aces as high(11) or low(1)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!top</span></span></dt>
+<dd><ul class="simple">
+<li><p>Returns a list of top 10 point holders</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!tophours</span></span></dt>
+<dd><ul class="simple">
+<li><p>Returns a list of top 10 watchtime holders</p></li>
+</ul>
+</dd></dl>
+
+</section>
+<section id="custom-command-args">
+<h1>Custom command args:<a class="headerlink" href="#custom-command-args" title="Permalink to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${user}</span></span></dt>
+<dd><p>This is to get the name of the user that invoked the command:
+‘I am ${user}, hello’ = I am obrozuki13, hello</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${game}</span></span></dt>
+<dd><p>This is to return the current game of the channel:
+‘We currently are playing ${game}’ = We currently are playing Valorant.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${target_url}</span></span></dt>
+<dd><p>This is to return the target in a given command:
+‘this is there link: ${target_url}’ = this is there link: www.twitch.tv/Azuremoon13</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${target_game}</span></span></dt>
+<dd><p>This is to return the target in a given command:
+‘${user} is playing ${target_game}’ = Azure is playing Valorant</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${target}</span></span></dt>
+<dd><p>This is to return the target in a given command:
+‘${user} hugs ${target}’ = obrozuki13 hugs azure</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>if there is no user specified for the target, it will self target the user.</p></li>
+<li><p>if there is no tag from twitch using ‘&#64;’ it will default to the first word after the command invoke, conversely if there is a tag it will use this even if its not first word.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${mention}</span></span></dt>
+<dd><p>This is to return the target in a given command but with the &#64;:
+‘hello ${mention}!’ = hello &#64;dot_thebot!</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${url.x}</span></span></dt>
+<dd><p>This is to run a api fetch from a url and return it in plain text.
+‘we currently are ${url.https://api.kyroskoh.xyz/valorant/v1/mmr/eu/x/x}’ = we currently are Radiant - 69rr</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${count</span> <span class="pre">x}</span></span></dt>
+<dd><p>This is used to create a count for a certain thing, this will increment the counter each time it is invoked:
+we have died ${count deaths} times = we have died 13 times</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this doesnt just have to me a random name, you can use other custom args in this to create unique counters</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${getcount</span> <span class="pre">x}</span></span></dt>
+<dd><p>This is used to get a count for a certain thing:
+we have died ${getcount deaths} times = we have died 13 times</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randuser}</span></span></dt>
+<dd><p>This will return a random user in the chat.
+Here is a random user.. ${randuser} you have won! = Here is a random user.. Azure you have won!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this will also include any bots in your chat.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randmod}</span></span></dt>
+<dd><p>This will return a random active moderator in the chat.
+Here is a random mod.. show your love to ${randmod}! = Here is a random mod.. show your love to Azure!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>this will also include any bots modded in your chat.</p></li>
+<li><p>they also have to of spoken in chat</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randnum.x-y}</span></span></dt>
+<dd><p>this will return a random number between the 2 numbers you specify.
+‘I am ${randnum.0-110}% lit today’ = I am 69% lit today.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${randchoice.[x,y,z]}</span></span></dt>
+<dd><p>this will return a random choice between the list you specify.
+‘I am ${randchoice.[funny,cool,sexy]}’ = I am cool.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>-any items need to be between [ ] and seperated by a ,</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">${word}</span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">coming</span> <span class="pre">soon...</span></span></dt>
+<dd></dd></dl>
+
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Azure
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
+</html>
