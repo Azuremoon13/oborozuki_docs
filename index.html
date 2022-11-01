@@ -236,6 +236,22 @@ participate, please head to <a class="reference external" href="https://www.twit
 
 <dl class="py function">
 <dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!enable</span></span></dt>
+<dd><ul class="simple">
+<li><p>to enable a custom command !enable &lt;name&gt;</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!disable</span></span></dt>
+<dd><ul class="simple">
+<li><p>to disable a custom command !disable &lt;name&gt;</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">!quiet</span></span></dt>
 <dd><ul class="simple">
 <li><p>use this to disable all commands in this channel</p></li>
@@ -339,6 +355,79 @@ participate, please head to <a class="reference external" href="https://www.twit
 <li><p>if a user is supplied after this command, it will fetch a random quote for that person</p></li>
 <li><p>if NO number is provided this will randomly select a quote for this channel</p></li>
 </ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!oops</span></span></dt>
+<dd><ul class="simple">
+<li><p>deletes up to the last 10 messages from a user, !oops 5</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!counter</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a generic counter function, it is simply !counter &lt;x&gt; where X is +, - or set to adjust counter.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!editcounter</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is to edit custom counters from commands.</p></li>
+<li><p>if you just do !editcounter you will get a list of all counters you can adjust</p></li>
+<li><p>to adjust a counter do !editcounter &lt;counter&gt; &lt;value&gt;</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!followage</span></span></dt>
+<dd><ul class="simple">
+<li><p>Pretty obvious… shows followage to the streamer</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!squad</span></span></dt>
+<dd><ul class="simple">
+<li><p>if you just do squad, this shows the current squad.</p></li>
+<li><p>add or a: use to add to the squad, this will accept mulitple people at once if they are seperated by a , so “&#64;azure , &#64;Dot”</p></li>
+<li><p>remove or r: use to remove from the squad, this will accept mulitple people at once if they are seperated by a , so “&#64;azure , &#64;Dot”</p></li>
+<li><p>clear: this will clear the squad for the channel</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!timers</span></span></dt>
+<dd><ul class="simple">
+<li><p>This is a chat message timer function.. (all message intervals default to 30minutes, can be changed in intervals of 5 minutes)</p></li>
+<li><p>enable: to enable ALL chat timers</p></li>
+<li><p>disable: to disable ALL chat timers</p></li>
+<li><p>add or a: use this to add a chat timer, !timers a &lt;name&gt; &lt;message&gt;</p></li>
+<li><p>remove or r: use this to remove a timer, !timers r &lt;name&gt;</p></li>
+<li><p>edit or e: use this to edit a message from a timer, !timers e &lt;name&gt; &lt;new_message&gt;</p></li>
+<li><p>option or o: use this to enable/disable or adjust the interval of a timer !timers o &lt;name&gt; (&lt;enabled=(1/0)&gt; / &lt;interval=5&gt;)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">!botcleanup</span></span></dt>
+<dd><ul class="simple">
+<li><p>BANS ALL KNOWN BOTS TO DOT, this will go through dot’s database and ban all know bots to dot.. currently 6k. (not really advised, fun to watch though)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>This is a BROADCASTER only command</p></li>
+</ul>
+</div>
 </dd></dl>
 
 </section>
